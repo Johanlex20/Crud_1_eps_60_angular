@@ -12,11 +12,14 @@ import { RouterModule, Routes } from '@angular/router';
 //CREACION DEL BACKEND SPRINGBOOT
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './clientes/form.component';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes = [
   {path:'', redirectTo:'incio', pathMatch:'full'},
   {path:'inicio',component:InicioComponent},
   {path:'clientes', component:ClientesComponent},
+  {path:'clientes/form', component:FormComponent}
 ];
 
 @NgModule({
@@ -25,11 +28,13 @@ const routes:Routes = [
     InicioComponent,
     FooterComponent,
     HeaderComponent,
-    ClientesComponent
+    ClientesComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
