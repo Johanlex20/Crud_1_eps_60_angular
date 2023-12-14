@@ -9,6 +9,10 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { ClienteService } from './clientes/cliente.service';
 import { RouterModule, Routes } from '@angular/router';
 
+//CREACION DEL BACKEND SPRINGBOOT
+
+import { HttpClientModule } from '@angular/common/http';
+
 const routes:Routes = [
   {path:'', redirectTo:'incio', pathMatch:'full'},
   {path:'inicio',component:InicioComponent},
@@ -25,6 +29,7 @@ const routes:Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
